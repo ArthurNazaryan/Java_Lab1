@@ -11,8 +11,8 @@ class FootballTeam {
     int wins; // Количество победы команды
 }
 
-public class Main {
-    public static void main(String[] args) {
+public class Main { // Главный класс с методами
+    public static void main(String[] args) { // Главный метод (точка входа в программу)
         Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
 
         // Ввод информации о командах
@@ -55,9 +55,9 @@ public class Main {
                 + "\t" + footballTeams[nommax].rank + "\t" + footballTeams[nommax].wins);
 
         // Команды с количеством побед больше среднего
-        double s = 0; // суммарное количество побед
+        int s = 0; // суммарное количество побед
         for (FootballTeam footballTeam : footballTeams) s += footballTeam.wins;
-        double sr = s / footballTeams.length; // среднее количество побед команд
+        int sr = s / footballTeams.length; // среднее количество побед команд
         System.out.println("Среднее количество побед команд = " + sr);
         System.out.println("\nКоманды с количеством побед больше среднего");
         System.out.println("Название" + "\t" + "Город"
@@ -124,8 +124,8 @@ public class Main {
                 footballTeams[nom].rank = sc.nextInt();
             }
             default -> {
-                System.out.println("Введите новое значение для поля 'Победы': ");
-                footballTeams[nom].wins = sc.nextInt();
+                System.out.println("Введите новое значение для поля 'Название': ");
+                footballTeams[nom].name = sc.nextLine();
             }
         }
         // Вывод полной информации о команде после редактирования
